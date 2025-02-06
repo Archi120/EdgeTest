@@ -1,0 +1,61 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "[Tests] PHPUnit",
+            "type": "shell",
+            "command": "php artisan test --parallel",
+            "problemMatcher": []
+        },
+        {
+            "label": "[Tests] PHPUnit (coverage-html)",
+            "type": "shell",
+            "command": "php artisan test --parallel --coverage-html .tmp/logs/coverage-html",
+            "problemMatcher": []
+        },
+        {
+            "label": "[CS] PHP CS Fixer",
+            "type": "shell",
+            "command": "./vendor/bin/php-cs-fixer fix -v",
+            "problemMatcher": []
+        },
+        {
+            "label": "[SA] PHPStan",
+            "type": "shell",
+            "command": "./vendor/bin/phpstan analyse -v",
+            "problemMatcher": []
+        },
+        {
+            "label": "[SA] PHPStan (baseline)",
+            "type": "shell",
+            "command": "./vendor/bin/phpstan analyse --generate-baseline",
+            "problemMatcher": []
+        },
+        {
+            "label": "[Composer] dump-autoload",
+            "type": "shell",
+            "command": "composer dump-autoload",
+            "problemMatcher": []
+        },
+        {
+            "label": "[NPM] Build",
+            "type": "shell",
+            "command": "npm run build",
+            "problemMatcher": []
+        },
+        {
+            "label": "[Artisan] Icon: Cache-set",
+            "type": "shell",
+            "command": "php artisan icons:cache",
+            "problemMatcher": []
+        },
+        {
+            "label": "[Artisan] Icon: Cache-clear",
+            "type": "shell",
+            "command": "php artisan icons:clear",
+            "problemMatcher": []
+        }
+    ]
+}
